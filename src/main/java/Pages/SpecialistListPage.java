@@ -8,28 +8,28 @@ import static Base.BaseTest.driver;
 
 public class SpecialistListPage {
 
-    private List<WebElement> blocksSpecialists() {
+    private List<WebElement> SpecialistBlocks() {
         return driver.findElements(By.cssSelector(".listing__item.card.js-mini-profile"));
     }
 
-    private WebElement labelSpecialist() {
+    private WebElement MainHeader() {
         return driver.findElement(By.cssSelector(".titleH1.list_col-with_toggler"));
     }
 
-    private WebElement labelGroupSpecialist() {
-        return driver.findElement(By.cssSelector(".js-breadcrumb>span"));
+    private WebElement serviceSelect() {
+        return driver.findElement(By.cssSelector("#select2-chosen-5"));
     }
 
-    public String getTxtLabel() {
-        return labelSpecialist().getText();
+    public String getMainHeaderText() {
+        return MainHeader().getText();
     }
 
-    public String getGroupTxtLabel() {
-        return labelGroupSpecialist().getText();
+    public String getServiceText() {
+        return serviceSelect().getText();
     }
 
-    public int getSpecialistCount () {
-        return blocksSpecialists().size();
+    public int getSpecialistsNumber() {
+        return SpecialistBlocks().size();
     }
 
 }

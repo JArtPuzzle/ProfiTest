@@ -9,7 +9,7 @@ import static Base.BaseTest.driver;
 
 public class MainPage {
 
-    private WebElement fieldSearch() {
+    private WebElement inputSpecialist() {
         return driver.findElement(By.id("s2id_autogen5"));
     }
 
@@ -21,9 +21,9 @@ public class MainPage {
         return driver.findElement(By.cssSelector(".btn-block.btn-middle"));
     }
 
-    public SpecialistListPage searchBySpecialist (String text) {
-        fieldSearch().click();
-        inputSearch().sendKeys(text);
+    public SpecialistListPage searchBySpecialist(String searchText) {
+        inputSpecialist().click();
+        inputSearch().sendKeys(searchText);
         btnFind().click();
         return new SpecialistListPage();
     }
