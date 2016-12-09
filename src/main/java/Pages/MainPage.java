@@ -7,6 +7,9 @@ import static Base.BaseTest.MAIN_URL;
 import static Base.BaseTest.driver;
 
 
+/**
+ * Главная страница сайта.
+ */
 public class MainPage {
 
     private WebElement inputSpecialist() {
@@ -21,11 +24,11 @@ public class MainPage {
         return driver.findElement(By.cssSelector(".btn-block.btn-middle"));
     }
 
-    public SpecialistListPage searchBySpecialist(String searchText) {
+    public SpecialistsListPage searchBySpecialist(String searchText) {
         inputSpecialist().click();
         inputSearch().sendKeys(searchText);
         btnFind().click();
-        return new SpecialistListPage();
+        return new SpecialistsListPage();
     }
 
     public MainPage openSite() {

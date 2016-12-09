@@ -1,7 +1,7 @@
 package Base;
 
 import Pages.MainPage;
-import Pages.SpecialistListPage;
+import Pages.SpecialistsListPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
@@ -14,15 +14,16 @@ public class BaseTest {
     public static WebDriver driver;
 
     public static final String MAIN_URL = "https://profi.ru";
+    private String pathToChromeDriver = "src/main/resources/chromedriver.exe";
 
     public final MainPage MAIN_PAGE = new MainPage();
-    public final SpecialistListPage SPECIALIST_LIST_PAGE = new SpecialistListPage();
+    public final SpecialistsListPage SPECIALIST_LIST_PAGE = new SpecialistsListPage();
 
     public static SoftAssert softAssert = new SoftAssert();
 
     @BeforeSuite
     public void beforeSuite() {
-        System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", pathToChromeDriver);
     }
 
     @BeforeMethod
